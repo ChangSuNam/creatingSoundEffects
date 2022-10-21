@@ -1,1 +1,18 @@
-<h1> testnig</h1>
+<h1>Creating Sound Effects</h1>
+
+
+<p1>
+ Using Web Audio, I tried to create a boom sound effect in 8 bit video games, for bombs: low-pitched, and long-lasting sound effect that doesn’t stop immediately. I approached this with controlling the gain.
+
+For richness of the sound, I used additive synthesis. 5 oscillators are created and added to a list. They are each given triangle waveform, with frequency value of 10, 20, 30, 40, and 50. They are all connected to the globalGain node with gain value of 50, which is connected to the audio destination. As the oscillators start, I used setTargetAtTime() method to decrease the gain slowly.  
+
+For method setTargetAtTime(target, startTime, timeConstant), I set the target as 0 so that the global gain will become 0, stopping the sound eventually. I set the timeConstant as 0.5, so that the transition is slow. Note that higher this value is, slower the transition is.
+
+To set the pitch low, initial value of the globalGain node and oscillators’ frequency are set low. There was a lot of trial and error with different numbers to create the desired sound with appropriate pitch, that is not too low or high. When I set the frequency of the oscillators all equally to 10, and remove the code with setTargetAtTime(), it created a much lower pitched sound that resembles that of a helicopter, which was interesting too! 
+
+This was fun to work with. Using audio output as a guide to debug my code was a unique experience, I did not have in other computer science classes.
+
+
+  
+  
+ </p1>
