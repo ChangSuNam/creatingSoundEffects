@@ -1,0 +1,27 @@
+<h1>Creating Sound Effects:8-bit explosion</h1>
+
+
+<p1>
+To emulate the boom sound of 8-bit video game bomb explosions, 
+I used the Web Audio API with a focus on additive synthesis and dynamic envelope shaping. 
+I created five triangle-wave oscillators with low frequencies (10–50 Hz), connected them to a shared gain node (globalGain set to 50), and routed the output to the audio destination.  
+</p1>
+
+&nbsp;
+
+ <p1>
+  To simulate a long-lasting decay, I applied the setTargetAtTime() method on the gain node—setting the target to 0 and using a timeConstant of 0.5—causing the volume to fade slowly rather than stopping abruptly. This parameter required extensive tuning; higher timeConstant values yielded smoother, more cinematic fades.
+ </p1>
+
+ &nbsp;
+
+<p1>
+ Throughout development, I iteratively adjusted oscillator frequencies and gain settings to strike a balance between low pitch and clarity. At one point, setting all oscillators to 10 Hz and removing the envelope created a helicopter-like drone, which, while unintended, revealed the creative potential of synthesis through code.
+</p1>
+ &nbsp;
+<p1>
+ This project was particularly enjoyable because the sound itself became a debugging tool—offering immediate auditory feedback and encouraging exploration through listening rather than just visuals or logs.
+</p1>
+ &nbsp; &nbsp;
+
+https://github.com/ChangSuNam/creatingSoundEffects
