@@ -1,18 +1,27 @@
-<h1>Creating Sound Effects</h1>
+<h1>Creating Sound Effects:8-bit explosion</h1>
 
 
 <p1>
- Using Web Audio, I tried to create a boom sound effect in 8 bit video games, for bombs: low-pitched, and long-lasting sound effect that doesn’t stop immediately. I approached this with controlling the gain.
+To emulate the boom sound of 8-bit video game bomb explosions, 
+I used the Web Audio API with a focus on additive synthesis and dynamic envelope shaping. 
+I created five triangle-wave oscillators with low frequencies (10–50 Hz), connected them to a shared gain node (globalGain set to 50), and routed the output to the audio destination.  
+</p1>
 
-For richness of the sound, I used additive synthesis. 5 oscillators are created and added to a list. They are each given triangle waveform, with frequency value of 10, 20, 30, 40, and 50. They are all connected to the globalGain node with gain value of 50, which is connected to the audio destination. As the oscillators start, I used setTargetAtTime() method to decrease the gain slowly.  
+&nbsp;
 
-For method setTargetAtTime(target, startTime, timeConstant), I set the target as 0 so that the global gain will become 0, stopping the sound eventually. I set the timeConstant as 0.5, so that the transition is slow. Note that higher this value is, slower the transition is.
-
-To set the pitch low, initial value of the globalGain node and oscillators’ frequency are set low. There was a lot of trial and error with different numbers to create the desired sound with appropriate pitch, that is not too low or high. When I set the frequency of the oscillators all equally to 10, and remove the code with setTargetAtTime(), it created a much lower pitched sound that resembles that of a helicopter, which was interesting too! 
-
-This was fun to work with. Using audio output as a guide to debug my code was a unique experience, I did not have in other computer science classes.
-
-
-  
-  
+ <p1>
+  To simulate a long-lasting decay, I applied the setTargetAtTime() method on the gain node—setting the target to 0 and using a timeConstant of 0.5—causing the volume to fade slowly rather than stopping abruptly. This parameter required extensive tuning; higher timeConstant values yielded smoother, more cinematic fades.
  </p1>
+
+ &nbsp;
+
+<p1>
+ Throughout development, I iteratively adjusted oscillator frequencies and gain settings to strike a balance between low pitch and clarity. At one point, setting all oscillators to 10 Hz and removing the envelope created a helicopter-like drone, which, while unintended, revealed the creative potential of synthesis through code.
+</p1>
+ &nbsp;
+<p1>
+ This project was particularly enjoyable because the sound itself became a debugging tool—offering immediate auditory feedback and encouraging exploration through listening rather than just visuals or logs.
+</p1>
+ &nbsp; &nbsp;
+
+https://github.com/ChangSuNam/creatingSoundEffects
